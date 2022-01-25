@@ -17,6 +17,10 @@
             <to-view-id>/home-guest.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/detran.xhtml</from-view-id>
+    </navigation-rule>
 
     <navigation-rule>
         <from-view-id>/management/home.xhtml</from-view-id>
