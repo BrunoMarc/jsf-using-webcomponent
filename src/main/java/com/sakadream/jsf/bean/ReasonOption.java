@@ -1,14 +1,18 @@
-package com.sakadream.jsf.bean;
-
+package com.sakadream.jsf.bean; 
 import java.util.ArrayList;
+import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties; 
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ReasonOption{
-    public String _id;
-    public ArrayList<Object> reason_options;
+    public String label;
     public boolean hidden;
     public boolean restrict;
-    public String label;
-    public String value;
-    public String category;
-    public int __v;
+    public Category category;
+    public Value value;
+    public Date createdAt;
+    public Date updatedAt;
+    public int id;
+    public ArrayList<Object> reasonOptions;
 }

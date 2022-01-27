@@ -1,48 +1,21 @@
 package com.sakadream.jsf.bean;
 
-/**
- * Created by Phan Ba Hai on 17/07/2017.
- */
+import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
-    private int id;
-    private String username;
-    private String password;
-
-    public User() {
-    }
-
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
-
-    public User(int id, String username, String password) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    public String name;
+    public Object birthday;
+    public Object motherName;
+    public Object gender;
+    public Object phone;
+    public Object hasAuthorizedMessages;
+    public Object cpf;
+    public String whatsappNumber;
+    public Object roleId;
+    public Date createdAt;
+    public Date updatedAt;
+    public int id;
 }
