@@ -13,27 +13,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Agendas do Detran - JSF Application</title>
     
-	<link rel="stylesheet" href="./styles.css"></link>
-	<script type="module" src="./index.js"></script> 
+<!-- 	<link rel="stylesheet" href="./styles.css"></link>
+	<script type="module" src="./index.js"></script>  -->
+	
+	<!-- <link rel="stylesheet" href="http://tag.encaixe.me/assets/styles.css"
+		crossorigin="anonymous"></link>
+	<link rel="preload" href="http://tag.encaixe.me/assets/index.js" as="script"></link>
+	<script type="module" src="http://tag.encaixe.me/assets/index.js"></script> -->
+	
+	<!--  MÉTODO PARA UTILIZAR DURANTE O DESENVOLVIMENTO DA LIB (apenas equipe Encaixe) -->
+	<link rel="stylesheet" href="http://local.tag.encaixe.me:4200/styles.css"
+		crossorigin="anonymous"></link>
+	<script type="module" src="http://local.tag.encaixe.me:4200/polyfills.js"></script>
+    <link rel="preload" href="http://local.tag.encaixe.me:4200/scripts.js" as="script"></link>
+    <script type="module" src="http://local.tag.encaixe.me:4200/scripts.js"></script>
+    <link rel="preload" href="http://local.tag.encaixe.me:4200/main.js" as="script"></link>
+  	<script type="module" src="http://local.tag.encaixe.me:4200/main.js"></script> 
 </h:head>
 <h:body style="padding: 60px; min-height: 2000px;">
     <b:navBar brand="Detran" brandHref="#" fixed="top" inverse="true">
         <b:navbarLinks>
-            <b:form>
-                <b:commandButton look="default" action="#{login.logout()}" value="Logout"></b:commandButton>
-            </b:form>
+
         </b:navbarLinks>
     </b:navBar>
     <b:container>
-        <h:link outcome="add" styleClass="btn btn-success" style="margin-bottom: 20px" value="Add"/>
+        <br/>
         <br/>
         <h:form id="form">
-            <b:dataTable value="#{emp.showSchedules()}" var="schedule">
+
+		    <b:selectOneMenu  id="reason" value="#{emp.reasonOption}" colMd="2" label="Categoria" labelColMd="2">
+		      <f:selectItem itemLabel="Selecione" itemValue="" />
+		      <f:selectItems value="#{emp.establishmentInfo.reasonOptions}" var="option" itemValue="#{option.id}" itemLabel="#{option.label}"/>
+ 				<f:ajax listener="#{emp.showSchedules}" render="schedule selected"/>
+ 		    </b:selectOneMenu>
+	
+		  
+<!-- 			<b:panel id="schedule">
+			    <b:selectOneMenu rendered="#{emp.responseJsonSchedules != null}" noSelectionOption="true"   value="#{emp.selectedSchedule}" colMd="2" label="Serviço" labelColMd="2">
+			      <f:selectItem itemLabel="Selecione" itemValue="0" />
+			      <f:selectItems value="#{emp.responseJsonSchedules}" var="option2" itemValue="#{option2.service.id}" itemLabel="#{option2.schedule.title}"/>
+			    	<f:ajax listener="#{emp.showSelectedSchedules}" render="selected2" />
+			    </b:selectOneMenu>
+			</b:panel> -->
+		    
+		    <br/>
+		     
+<!-- 		     <b:panel rendered="#{emp.selectedSchedule != null}">
+		     	    <encaixe-schedule color="#00b7f0"
+                        data='{"user": {"name": "#{emp.username}", "whatsappNumber":"#{emp.celnumber}"}, "offers": {"serviceId": "#{emp.selectedSchedule.service.id}", "value": "2"}}'
+                        schedule='{"id": "#{emp.selectedSchedule.schedule.id}"}'>
+            		</encaixe-schedule>
+		     </b:panel> -->
+<!-- 	Schedule: <h:outputText  id="selected" value="#{emp.reasonOption}"></h:outputText>
+		Schedule: <h:outputText  id="selected2" value="#{emp.selectedSchedule}"></h:outputText> -->
+                        
+<!-- 		   <span rendered="#{emp.reasonOption}">#{emp.reasonOption}</span>
+ -->
+		  
+            <b:dataTable id="schedule" value="#{emp.responseJsonSchedules}" var="schedule">
                 <b:dataTableColumn value="#{schedule.schedule.title}" label="Agenda"/>
                 <b:dataTableColumn value="#{schedule.service.name}" label="Serviço"/>
-                <b:dataTableColumn label="Action">
+                <b:dataTableColumn label="Ação">
                    <encaixe-schedule color="#00b7f0"
-                        data='{"user": {"name": "Bruno Marchini", "whatsappNumber":"11994121131"}, "offers": {"serviceId": "24", "value": "2"}}'
+                        data='{"user": {"name": "#{emp.username}", "whatsappNumber":"#{emp.celnumber}"}, "offers": {"serviceId": "#{schedule.service.id}", "value": "2"}}'
                         schedule='{"id": "13"}'></encaixe-schedule>
 
                 </b:dataTableColumn>

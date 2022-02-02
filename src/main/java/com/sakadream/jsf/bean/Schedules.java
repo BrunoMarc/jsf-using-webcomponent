@@ -8,4 +8,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Schedules {
 
 	List<ScheduleData> schedules;
+
+	public List<ScheduleData> getSchedules() {
+		return schedules;
+	}
+
+	public void setSchedules(List<ScheduleData> schedules) {
+		this.schedules = schedules;
+	}
+	
+	
 }
