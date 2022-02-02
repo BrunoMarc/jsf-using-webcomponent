@@ -40,12 +40,16 @@
         <br/>
         <br/>
         <h:form id="form">
+        
+        <b:panel>
 
 		    <b:selectOneMenu  id="reason" value="#{emp.reasonOption}" colMd="2" label="Categoria" labelColMd="2">
 		      <f:selectItem itemLabel="Selecione" itemValue="" />
 		      <f:selectItems value="#{emp.establishmentInfo.reasonOptions}" var="option" itemValue="#{option.id}" itemLabel="#{option.label}"/>
- 				<f:ajax listener="#{emp.showSchedules}" render="schedule selected"/>
+ 				<f:ajax listener="#{emp.showSchedules}" render="schedule"/>
  		    </b:selectOneMenu>
+ 		    
+ 		</b:panel>
 	
 		  
 <!-- 			<b:panel id="schedule">
