@@ -26,7 +26,7 @@ public class AuthorizationFilter implements Filter {
             HttpSession session = req.getSession();
 
             String reqUri = req.getRequestURI();
-            if(reqUri.indexOf("/login.xhtml") >= 0
+            if(reqUri.indexOf("/detran.xhtml") >= 0 || reqUri.indexOf("/login.xhtml") >= 0
                     || reqUri.indexOf("/home-guest.xhtml") >= 0
                     || (session != null && session.getAttribute("username") != null)
                     || reqUri.indexOf("/public/") >= 0

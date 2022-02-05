@@ -9,6 +9,11 @@
         <param-name>javax.faces.PROJECT_STAGE</param-name>
         <param-value>Development</param-value>
     </context-param>
+    
+    <context-param>
+	  <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
+	  <param-value>true</param-value>
+	</context-param>
 
     <!-- 
         FacesServlet is main servlet responsible to handle all request. 
@@ -39,4 +44,6 @@
     <welcome-file-list>
         <welcome-file>faces/login.xhtml</welcome-file>
     </welcome-file-list>
+    
+
 </web-app>

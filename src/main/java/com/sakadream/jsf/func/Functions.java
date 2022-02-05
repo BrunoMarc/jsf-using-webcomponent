@@ -47,7 +47,7 @@ public class Functions {
 
         ResultSet resultSet = preparedStatement.executeQuery();
 
-        if(resultSet.next()) setSessionUsername(username);
+        if(resultSet.next()) setSessionUsernameAndCelNumber(username, "");
         else b = false;
 
         cleanConnection();
@@ -60,9 +60,11 @@ public class Functions {
                 .getExternalContext().getSession(false);
     }
 
-    private void setSessionUsername(String username) {
+    public void setSessionUsernameAndCelNumber(String username, String celnumber) {
         HttpSession session = getSession();
         session.setAttribute("username", username);
+        session.setAttribute("celnumber", celnumber);
+
     }
 
     public List<Employee> showAllEmployees() throws SQLException, ClassNotFoundException {

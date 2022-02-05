@@ -15,16 +15,16 @@
 
 
 	<!--  MÉTODO PARA UTILIZAR A LIB BAIXADA -->
-	<!--
+	
 	<link rel="stylesheet" href="./styles.css"></link>
 	<script type="module" src="./index.js"></script> 
-	-->
+	
 
 	<!--  MÉTODO PARA UTILIZAR A LIB HOSPEDADA -->
-	<link rel="stylesheet" href="http://tag.encaixe.me/assets/styles.css"
+<!-- 	<link rel="stylesheet" href="http://tag.encaixe.me/assets/styles.css"
 		crossorigin="anonymous"></link>
 	<link rel="preload" href="http://tag.encaixe.me/assets/index.js" as="script"></link>
-	<script type="module" src="http://tag.encaixe.me/assets/index.js"></script>
+	<script type="module" src="http://tag.encaixe.me/assets/index.js"></script> -->
 
 
 	<!--  MÉTODO PARA UTILIZAR DURANTE O DESENVOLVIMENTO DA LIB (apenas equipe Encaixe) -->
@@ -43,32 +43,24 @@
 		<b:column colMd="4" offset="4">
 			<b:form id="loginForm">
 				<legend>Login</legend>
-				<b:inputText id="username" name="username" placeholder="Username"
-					required="true" requiredMessage="Please Input Username!">
-					<f:facet name="prepend">
-						<b:icon name="user" />
-					</f:facet>
+				<b:inputText id="username" name="username" placeholder="Nome do cidadão"
+					required="true" requiredMessage="Por favor, informe o nome!">
 				</b:inputText>
 				<b:messages for="username" />
-				<b:inputSecret id="password" name="password" placeholder="Password"
-					required="true" requiredMessage="Please Input Password!">
-					<f:facet name="prepend">
-						<b:icon name="lock" />
-					</f:facet>
-				</b:inputSecret>
-				<b:messages for="password" />
+				<b:inputText id="celnumber" name="celnumber" type="tel"  mask="(99) 9{1}9999-9999" placeholder="WhatsApp"
+					required="true" requiredMessage="Por favor, informe o WhatsApp!">
+				</b:inputText>
+				<b:messages for="celnumber" />
 				<b:commandButton look="primary" style="margin-right: 10px"
 					action="#{login.login()}" value="Login"></b:commandButton>
-				<h:link outcome="home-guest" styleClass="btn btn-default"
-					value="Login as guest"></h:link>
 				<b:message for="loginForm" />
 			</b:form>
 		</b:column>
 	</b:container>
 
-	<encaixe-schedule color="#00b7f0"
+<!-- 	<encaixe-schedule color="#00b7f0"
 		data='{"user": {"name": "Bruno Marchini", "whatsappNumber":"11994121131"}, "offers": {"serviceId": "24", "value": "2"}}'
-		schedule='{"id": "13"}'></encaixe-schedule>
+		schedule='{"id": "13"}'></encaixe-schedule> -->
 
 </h:body>
 </html>
