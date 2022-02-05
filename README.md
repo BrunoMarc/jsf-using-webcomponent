@@ -29,6 +29,7 @@ Siga os passos conforme as imagens abaixo:
 ![enter image description here](https://encaixe-general-assets.s3.sa-east-1.amazonaws.com/JSFPOC-Jetty/2.PNG)
 
 3 -  Autorize a instalação do plugin
+
 ![enter image description here](https://encaixe-general-assets.s3.sa-east-1.amazonaws.com/JSFPOC-Jetty/3.PNG)
 
 4 - Clique sobre o projeto com o botão direito do mouse a vá para **Run Configurations**
