@@ -25,7 +25,8 @@ Siga os passos conforme as imagens abaixo:
 1 - Eclipse Marketplace
 ![enter image description here](https://encaixe-general-assets.s3.sa-east-1.amazonaws.com/JSFPOC-Jetty/1.PNG)
 
-2 - Efetue a busca para encontrar e instalar o plugin do Jetty![enter image description here](https://encaixe-general-assets.s3.sa-east-1.amazonaws.com/JSFPOC-Jetty/2.PNG)
+2 - Efetue a busca para encontrar e instalar o plugin do Jetty
+![enter image description here](https://encaixe-general-assets.s3.sa-east-1.amazonaws.com/JSFPOC-Jetty/2.PNG)
 
 3 -  Autorize a instalação do plugin
 ![enter image description here](https://encaixe-general-assets.s3.sa-east-1.amazonaws.com/JSFPOC-Jetty/3.PNG)
