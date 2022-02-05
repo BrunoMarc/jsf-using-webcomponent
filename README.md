@@ -60,6 +60,6 @@ Siga os passos conforme as imagens abaixo:
 # 2 - Explicação passo a passo do fluxo integrado a Encaixe
 EM CONSTRUÇÃO
 
-## Autenticação (opcional) - Apenas para utilização 
+## Autenticação (opcional) - Necessário quando for utilizar o componente fornecendo os dados do usuário que está agendando 
 
 EM CONSTRUÇÃO
